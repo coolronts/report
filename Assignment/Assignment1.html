@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>LAB ONE Report</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <section id="#title">
+        <!--Jumbotron-->
+        <div class="jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+            <div style="margin-left: 50px; margin-right: 50px">
+                <h1 class="display-1">Industry 4.0 and <br> Automation</h1>
+                <p class="lead"><strong> LAB ASSIGNMENT ONE </strong></p>
+                <p>
+                    <quote>By Zahid Hossain Ronty</quote>
+                </p>
+                <hr class="my-4" />
+                <div class="summary">
+                    <p>
+                        <i><b>
+            In Lab 1, the temperature of the Air Heater has been collected using DAQ-6000, and signal has been passed to the LABVIEW in PC. In the Labview, PID controller, Low pass Pass Filter and Scaling has been used to control the output signal to reach the set-point and pass the output signal back to the Air Heater. The data had been stored in OPC server from the Labview. Moreover, the data data had been sent to MySQL server in Azure Database. After the database had been implementation where the data should be stored in the Cloud using Microsoft Azure. Beside creating database, the website has been created using ASP.Net to monitor the real time value.
+            Cyber Security issues should also be considered.
+          </i></b>
+                    </p>
+                </div>
+
+                <p class="lead btn-learn">
+                    <a class="btn btn-secondary btn-lg" href="#main" role="button">
+          Learn more
+        </a>
+                </p>
+                <p class="material-icons">expand_more</p>
+            </div>
+        </div>
+    </section>
+    <section class="jumbotron" id="main">
+        <div class="row">
+            <div class="col-3">
+                <ul class="slider">
+                    <h1>Contents</h1>
+                    <hr>
+                    <li class="item">
+                        <h3> <a href="#intro">Introduction</a></h3>
+                        <ul class="slider nested">
+                            <li class="item">
+                                <h4> <a href="#overview">Overview</a></h4>
+                            </li>
+                            <li class="item">
+                                <h4> <a href="#sysOverview">System Overview</a></h4>
+                                <ul>
+                                    <li class="item nested1">
+                                        <h5> <a href="#internet">Internet 4.0</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#scada">Scada</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#cloud">Cloud Computing</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Frequency">Frequency Response and Stability Analysis</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Control">Control System</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#OPC">OPC UA</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Database">Database Azure</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#ASP">ASP.NET Core Web Application</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Cyber">Cyber Security.</a></h5>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="item">
+                                <h3><a href="#Methods">Methods</a></h3>
+                            </li>
+                            <li class="item">
+                                <h3><a href="#Results">Results</a></h3>
+                            </li>
+                            <li class="item">
+                                <h3><a href="#Conclusion">Conclusion</a></h3>
+                            </li>
+                            <li class="item">
+                                <h3><a href="#Reference">References</a></h3>
+                            </li>
+                        </ul>
+
+            </div>
+            <div class="col-9">
+                <div class="content">
+                    <div id="intro" class="introduction">
+                        <h1>Introduction</h1>
+                        <hr>
+                        <div id="overview" class="overview">
+                            <h2>Overview</h2>
+                            <hr>
+                            <p>
+                                <ul>
+                                    <li>
+                                        Modelling and Simulation. Control Design and Aalysis with MATLAB
+                                        <br> -Frequency Response, Stability Analysis, Simulation, etc.
+                                    </li>
+                                    <li>
+                                        Implementing Control System in LabView.
+                                    </li>
+                                    <li>
+                                        Use OPC UA - The Industry 4.0 Implementation of OPC.
+                                    </li>
+                                    <li>
+                                        Cloud based datalogging. SQL server stored in Microsoft Azure.
+                                    </li>
+                                    <li>
+                                        Monitoring and Analysis in the cloud. Web-based ASP.Net/C# system hosted at Microsoft Azure.
+                                    </li>
+                                    <li>
+                                        Give an overview and analyze issues regarding Cyber Security and GDRP for the system you create.
+                                    </li>
+                                </ul>
+                        </div>
+                        </p>
+                    </div>
+                    <div id="sysOverview" id="sysOverview">
+                        <h2>
+                            System Overview
+                        </h2>
+                        <hr>
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/SystemOverview.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"> <b>Figure 1:</b> System Overview</figcaption>
+                            </figure>
+
+                        </div>
+                        <h3 id="internet">Internet 4.0</h3>
+                        <hr>
+                        <p>Industry 4.0 refers to a new phase in the Industrial Revolution that focuses heavily on interconnectivity, automation, machine learning, and real-time data. Industry 4.0, which encompasses IIoT and smart manufacturing, marries
+                            physical production and operations with smart digital technology, machine learning, and big data to create a more holistic and better connected ecosystem for companies that focus on manufacturing and supply chain management.
+                            While every company and organization operating today is different, they all face a common challenge—the need for connectedness and access to real-time insights across processes, partners, products, and people.<a href="#1">[1]</a></p>
+
+                        <h3 id="scada">Scada</h3>
+                        <hr>
+                        <p>Supervisory control and data acquisition (SCADA) is a system of software and hardware elements that allows industrial organizations to: Control industrial processes locally or at remote locations, Monitor, gather, and process real-time
+                            data, Directly interact with devices such as sensors, valves, pumps, motors, and more through human-machine interface (HMI), software and Record events into a log file.<a href="#2">[2]</a></p>
+                        <h3 id="cloud">Cloud Computing</h3>
+                        <hr>
+                        <p>Cloud computing is the delivery of different services through the Internet. These resources include tools and applications like data storage, servers, databases, networking, and software.Rather than keeping files on a proprietary
+                            hard drive or local storage device, cloud-based storage makes it possible to save them to a remote database. As long as an electronic device has access to the web, it has access to the data and the software programs to run
+                            it. Cloud computing is a popular option for people and businesses for a number of reasons including cost savings, increased productivity, speed and efficiency, performance, and security.<a href="#3">[3]</a></p>
+
+                        <figure class="figure">
+                            <img src="https://th.bing.com/th/id/OIP.eAaiIDvib8Hu_XxA1f-Z5QHaGC?w=195&h=180&c=7&o=5&dpr=1.46&pid=1.7" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                            <figcaption class="figure-caption"><b>Figure 2:</b> Iaas vs Paas vs Saas</figcaption>
+                        </figure>
+
+
+
+                        <h3 id="Frequency">Frequency Response and Stability Analysis</h3>
+                        <hr>
+                        <p>The frequency response of a system is a frequency dependent function which expresses how a sinusoidal signal of a given frequency on the system input is transferred through the system. Each frequency component is a sinusoidal signal
+                            having certain amplitude and a certain frequency. The frequency response is an important tool for analysis and design of signal filters and for analysis and design of control systems. The frequency response can be found experimentally
+                            or from a transfer function model. The frequency response of a system is defined as the steady-state response of the system to a sinusoidal input signal. When the system is in steady-state, it differs from the input signal
+                            only in amplitude/gain (A) and phase lag (𝜙).<a href="#3">[3]</a></p>
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/Frequency.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                <figcaption class=" figure-caption "><b>Figure 3:</b> Frequency Response Analysis</figcaption>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li>
+                                <b>Bode Plot</b>
+                                <p>Bode plots display phasors graphically; the gain in decibels and phase in degrees are plotted against the frequency in Hertz. The horizontal scale is logarithmic and the vertical scales are linear.</p>
+                                <p>The Bode plot or the Bode diagram consists of two plots −
+                                    <ul>
+                                        <li>Magnitude plot</li>
+                                        <li>Phase plot</li>
+                                    </ul>
+                                </p>
+                                <p> In both the plots, x-axis represents angular frequency (logarithmic scale). Whereas, yaxis represents the magnitude (linear scale) of open loop transfer function in the magnitude plot and the phase angle (linear scale)
+                                    of the open loop transfer function in the phase plot.<br>The magnitude of the open loop transfer function in dB is
+                                    <strong>- M=20log|G(jω)H(jω)|</strong> <br> The phase angle of the open loop transfer function in degrees is <strong>- ϕ=∠G(jω)H(jω)</strong> <br>Note − The base of logarithm is 10.</p>
+                            </li>
+                        </ul>
+                        <b id="Control">PID Controller</b>
+                        <p>A PID controller is a three-term controller that has proportional, integral and derivative control coefficients. It is named after its three correcting terms and its sum produce a control action for manipulating variable. It measures
+                            the output of a process and controls the input by maintaining the output at a desired value (also called as set point). The most common example of PID controller is controlling temperature in many industrial applications.</p>
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/pid.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                <figcaption class=" figure-caption "><b>Figure 4:</b> PID Control</figcaption>
+                            </figure>
+                        </div>
+
+                        <b>Tuning Method</b>
+                        <p>Before the working of the PID controller takes place, it must be tuned to suit with dynamics of the process to be controlled. Designers give the default values for P, I, and D terms, and these values couldn’t give the desired performance
+                            and sometimes leads to instability and slow control performances. Different types of tuning methods are developed to tune the PID controllers and require much attention from the operator to select the best values of proportional,
+                            integral, and derivative gains. Some of these are given below. PID controllers are used in most industrial applications but one should know the settings of this controller to adjust it correctly to generate the preferred output.
+                            Here, tuning is nothing but the procedure of receiving an ideal reply from the controller through setting best proportional gains, integral & derivative factors. The desired output of the PID controller can be obtained by tuning
+                            the controller. There are different techniques available to get the required output from the controller like trial &error, Zeigler-Nichols & process reaction curve. The most frequently used methods are trial & error, Zeigler-Nichols,
+                            etc.
+                        </p>
+                        <ul>
+                            <li> <b> Zeigler-Nichols method:</b> Zeigler-Nichols proposed closed-loop methods for tuning the PID controller. Those are the continuous cycling method and damped oscillation method. Procedures for both methods are the same but
+                                oscillation behavior is different.
+                                <div class="image">
+                                    <figure class="figure">
+                                        <img src="./assets/img/Zeigler-Nichols-table.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                        <figcaption class=" figure-caption "><b>Figure 5:</b> Zeigler-Nichols Table</figcaption>
+                                    </figure>
+                                </div>
+
+                                In this, first, we have to set the p-controller constant, Kp to a particular value while Ki and Kd values are zero. Proportional gain is increased till the system oscillates at a constant amplitude. Gain at which system produces constant oscillations
+                                is called ultimate gain (Ku) and the period of oscillations is called the ultimate period (Pc). Once it is reached, we can enter the values of P, I, and D in the PID controller by Zeigler-Nichols table</li>
+                            <br>
+                            <li><b>Trial and Error Method:</b> It is a simple method of PID controller tuning. While the system or controller is working, we can tune the controller. In this method, first, we have to set Ki and Kd values to zero and increase
+                                the proportional term (Kp) until the system reaches oscillating behavior. Once it is oscillating, adjust Ki (Integral term) so that oscillations stop and finally adjust D to get a fast response.</li>
+                        </ul>
+                        </ul>
+                        <h3 id="OPC">OPC UA </h3>
+                        <hr>
+                        <p>OPC is the most used versatile way to communicate in the automation layer in all types of industry. Over the years it has evolved from the start with simple Data access (DA) over Alarm & Events (AE) to the more advanced Historical
+                            Data Access (HDA) to have quite extensive functionality and reach. </p>
+                        <p>The most significant difference between classical OPC and OPC UA is that it doesn’t rely on OLE or DCOM technology from Microsoft that makes it possible to implement it on any platform if that being Apple, Linux (JAVA) or Windows.
+                            The other very important part of UA is the possibility to use structures or models. This means that the data tags or points can be grouped and be given context which make governance and maintenance much easier. These models
+                            can be identified in runtime which makes it possible for a client to explore connection possible by asking the server.</p>
+
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/OPC UA.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                <figcaption class=" figure-caption "><b>Figure 6:</b> OPC UA</figcaption>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li>
+                                <h5>OPC UA Information Modelling</h5>
+                                <p>The information modelling is very modern in OPC UA. These models can be defined by manufactures or protocols like BACNet but it can also contain more of a MESH structure where very complex relations and connections between
+                                    points and nodes can be defined. The possibility also exist to have data structures so that certain data always is grouped and handled as one piece. This is important in many application to be sure that the data set
+                                    is taken at the same time.</p>
+                                <div class="image">
+                                    <figure class="figure">
+                                        <img src="./assets/img/opc modelling.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                        <figcaption class=" figure-caption "><b>Figure 7:</b> OPC Information Model</figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                            <li>
+                                <h5>OPC UA Communication layers</h5>
+                                <p>OPC UA is as said before built to be platform independent and the communication is built into layers on top of the standard TCP/IP stack. Above the standard transport layers there are two layers, one that handles the session
+                                    and one to establish a secure channel between the client and server. The transport layer is made up of TCP/IP and on top of that SSL, HTTP or HTTPS. The Communication layer secure the communication channel not just
+                                    that the data is corrupted but also it secure the authentication so that the end points can’t be infiltrated and changed. This is based on X.509 certificates that have three parts to it and the first peer to peer trust
+                                    needs to be manually done but after that the rest is taken care of securely.
+                                </p>
+                                <div class="image">
+                                    <figure class="figure">
+                                        <img src="./assets/img/opc communication.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                        <figcaption class=" figure-caption "> <b>Figure 8:</b> OPC Communication Layer</figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                            <li>
+                                <h4>Applications with OPC UA</h4>
+                                <p>So far OPC UA are mostly used for bridging between different OPC servers, this is called tunneling. This is something that for example KEPServerEX OPC UA tunnel does. Other applications include the GE Global discovery server
+                                    and the same control system that have full OPC UA support for browsing the data structures. This is still quite uncommon but the development goes fast and there is a lot of work done in order to include data models
+                                    for transferring models from BACNet, ISA95 and PLCopen.</p>
+                                <div class="image">
+                                    <figure class="figure">
+                                        <img src="./assets/img/OPC Application.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                        <figcaption class=" figure-caption "><b>Figure 9:</b> OPC Tunneling</figcaption>
+                                    </figure>
+                                </div>
+                            </li>
+                        </ul>
+                        <h3 id="Database">AZURE SQL Database</h3>
+                        <hr>
+                        <p>Azure SQL Database is a fully managed platform as a service (PaaS) database engine that handles most of the database management functions such as upgrading, patching, backups, and monitoring without user involvement. Azure SQL
+                            Database is always running on the latest stable version of the SQL Server database engine and patched OS with 99.99% availability. PaaS capabilities that are built into Azure SQL Database enable you to focus on the domain-specific
+                            database administration and optimization activities that are critical for your business.</p>
+                        <p>With Azure SQL Database, you can create a highly available and high-performance data storage layer for the applications and solutions in Azure. SQL Database can be the right choice for a variety of modern cloud applications because
+                            it enables you to process both relational data and non-relational structures, such as graphs, JSON, spatial, and XML.
+                        </p>
+                        <h3 id="ASP">ASP.NET Core Web App</h3>
+                        <hr>
+                        <p>ASP.NET is a popular web-development framework for building web apps on the .NET platform. ASP.NET Core is the open-source version of ASP.NET, that runs on macOS, Linux, and Windows. ASP.NET Core was first released in 2016 and
+                            is a re-design of earlier Windows-only versions of ASP.NET.</p>
+                        <p>ASP.NET Core is designed to allow runtime components, APIs, compilers and languages evolve quickly, while still providing a stable and supported platform to keep apps running. Multiple versions of ASP.NET Core can exist side by
+                            side on the same server. Meaning one app can adopt the latest version, while other apps keep running on the version they were tested on. ASP.NET Core provides various support lifecycle options to meet the needs of your app.
+                            You can chose a long-term support release, or run with the latest release if you commit to upgrade more often.</p>
+                        <p>ASP.NET apps can be developed and run on Windows, Linux, macOS, and Docker. The Visual Studio family of products has tools for building .NET apps on any operating system. There are also command line tools and extensions for many
+                            popular edit</p>
+                        <p>The ASP.NET Core runtime that your app runs on can be deployed as part of your app, or installed centrally on your web server. ASP.NET Core is also perfectly suited for Docker containers.
+                        </p>
+                        <h3 id="Cyber">Cyber Security</h3>
+                        <hr>
+                        <p>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These cyber-attacks are usually aimed at accessing, changing, or destroying sensitive information, extorting money from users, or
+                            interrupting normal business processes. Different types of Cyber Security threats:
+                            <ul>
+                                <li>Ransomware</li>
+                                <li>Malware</li>
+                                <li>Social engineering</li>
+                                <li>Malware</li>
+                                <li>Phishing</li>
+                            </ul>
+                        </p>
+
+                        <p>To be secured:
+                            <ul>
+                                <li>Passwords</li>
+                                <li>Firewall</li>
+                                <li>Antivirus and anti-malware software</li>
+                                <li>Access control</li>
+                                <li>VPN</li>
+                                <li>Wi-Fi Network can be used</li>
+                            </ul>
+                        </p>
+                        <h3>GDPR</h3>
+                        <hr>
+
+                        <p>EU regulation. All countries and companies within EU need to follow the regulation. Also outside EU if the company save data about EU citizens</p>
+                        <p>Purpose:
+                            <ul>
+                                <li>
+                                    Protect the privacy and the data stored, i.e., protection of your digital life
+                                </li>
+                                <li>Better control of your personal data </li>
+                            </ul>
+                        </p>
+                        <br>
+                    </div>
+                    <h1 id="Methods">Methods</h1>
+                    <hr>
+                    <p>
+
+                        We have used LabView black-box system from last courses to create Air Heater model.
+                        <div class="image">
+                            <figure class=" figure">
+                                <img src="./assets/img/Lab view.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 11:</b> LabView Code</figcaption>
+                            </figure>
+                        </div>
+                        Trial and error method was used to check what parameters does it need to have to make it as like a real air heater.
+                        <div class="image">
+                            <figure class=" figure">
+                                <img src="./assets/img/Trial&Error.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 12:</b> Trial & Error Method</figcaption>
+                            </figure>
+                        </div>
+                        The Bode diagram was created to find the gain and the phase lag of the process.
+                        <div class="image">
+                            <figure class=" figure">
+                                <img src="./assets/img/gain.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 13:</b> Bode magnitude plot </figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="image">
+                            <figure class=" figure">
+                                <img src="./assets/img/phase.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 14:</b> Bode phase plot </figcaption>
+                            </figure>
+                        </div>
+                        <table class="table table-bordered" style="text-align:center">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">w(rad/s)</th>
+                                    <th scope="col">A(w)</th>
+                                    <th scope="col"> &#934 w(degree)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>0.001</td>
+                                    <td>8.298</td>
+                                    <td>-1.2</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>0.01</td>
+                                    <td>8.161</td>
+                                    <td>-11.9</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>0.1</td>
+                                    <td>2.0258</td>
+                                    <td>-78.1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>1</td>
+                                    <td>-16.8194</td>
+                                    <td>-259</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>3</td>
+                                    <td>-26.35</td>
+                                    <td>-604.7</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">6</th>
+                                    <td>5</td>
+                                    <td>-30.79</td>
+                                    <td>-949.8</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">7</th>
+                                    <td>10</td>
+                                    <td>-37.8</td>
+                                    <td>-1808.6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Skogestad's method was used to get the PI controller parameter and Bode plot was drawn.
+                            <div class="image">
+                                <figure class=" figure">
+                                    <img src="./assets/img/skog bode.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                    <figcaption class="figure-caption"><b> Figure 15:</b> Bode phase plot </figcaption>
+                                </figure>
+                            </div>
+                        </p>
+                        <p>Using the Ziegler-Nichols method, the Skogestad method was compared which was used. Skogestad method works better as the "Golden Rules" of stability analyzes states the Gain should be between 6-12dB and the PM should be between
+                            30-60. After getting all the required values, the PI controller was implemented in the LabView, which was tested. And the data was sent to Azure SQL using OPC UA.png
+                            <div class="image">
+                                <figure class=" figure">
+                                    <img src="./assets/img/OPC.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                    <figcaption class="figure-caption"><b> Figure 16:</b> OPC UA </figcaption>
+                                </figure>
+                            </div>
+                        </p>
+
+                        Moreover, we have created Web App to visualize the data in real time, in ASP.Net programming. And we have used Visual Studio as our IDE, and used HTML, CSS, Bootstrap as our frontend. Later,we have deployed our app in Azure Cloud system.
+
+                    </p>
+                    <h1 id="Results">Results</h1>
+                    <hr>
+                    <p>
+                        <div class="image">
+                            <figure class=" figure">
+                                <img src="./assets/img/pic.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b>Figure 17:</b> ASP.NET</figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/pic1.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b>Figure 18:</b> LabView</figcaption>
+                            </figure>
+                        </div>
+
+
+
+                    </p>
+                    <h1 id="Conclusion">Conclusion</h1>
+                    <hr>
+                    <p>In this assignment, we have come to know how IOT works and how to implement it. We have got thorough knowledge of LabView, Control System, Database Connectivity, Website and OPC.
+                    </p>
+                    <h1 id="Reference">References</h1>
+                    <hr>
+                    <p id="1">[1]<a href="https://www.epicor.com/en-us/resource-center/articles/what-is-industry-4-0">"What is Industry 4.0—the Industrial Internet of Things (IIoT)?", Epicor.com, 2020. [Online]. [Accessed: 02- Oct- 2020].</a> . </p>
+                    <p id="2">[2]<a href=" https://inductiveautomation.com/resources/article/what-is-scada">"What is SCADA?", Inductive Automation, 2020. [Online]. [Accessed: 02- Oct- 2020].</a> .
+                    </p>
+                    <p id="3">[3]<a href=" https://www.investopedia.com/terms/c/cloud-computing.asp">
+                            "How Cloud Computing Works", Investopedia, 2020. [Online].[Accessed: 02- Oct- 2020].</a> .
+                    </p>
+
+                    <p id="4">[4]<a href="https: //searchcloudcomputing.techtarget.com/definition/Software-as-a-Service">"SearchCloudComputing. 2020. What Is Saas (Software As A Service)? - Definition From Whatis.Com. [online]. [Accessed: 02- Oct- 2020].</a> .
+                    </p>
+                    <p id="5">[5]<a href="https: //azure.microsoft.com/en-gb/overview/what-is-paas">"What is PaaS? Platform as a Service | Microsoft Azure", Azure.microsoft.com, 2020. [Online].[Accessed: 01- Oct- 2020].</a> .
+                    </p>
+                    <p id="6">[6]<a href="https: //www.redhat.com/en/topics/cloud-computing/what-is-iaas">
+                        https://www.redhat.com/en/topics/cloud-computing/what-is-iaas. [Accessed: 01- Oct- 2020].</a> .
+                    </p>
+                </div>
+            </div>
+    </section>
+    <div class="footer">
+        <footer>
+            Created By <b> Zahid Hossain Ronty</b>
+        </footer>
+
+    </div>
+    <script src="" async defer></script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>LAB TWO Report</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <section id="#title">
+        <!--Jumbotron-->
+        <div class="jumbotron shadow-lg p-3 mb-5 bg-white rounded">
+            <div style="margin-left: 50px; margin-right: 50px">
+                <h1 class="display-1">Industry 4.0 and <br> Automation</h1>
+                <p class="lead"><strong> LAB ASSIGNMENT TWO </strong></p>
+                <p>
+                    <quote>By Zahid Hossain Ronty</quote>
+                </p>
+                <hr class="my-4" />
+                <div class="summary">
+                    <p>
+                        <i><b>
+           This assignment 2 is mainly concerned of Internet of Things, where Arduino has been used instead 
+           of Industrial Micro-controller to control the temperature of the Air heater. The PID controller has been 
+           implemented inside the Arduino to get into setpoint temperature and Low pass filter has been used to cut off unwanted
+            noises from the signal. Besides controlling the temperature of the air heater, the data has also been stored in the cloud 
+            (Thingspeak) to analyse and monitor the data in real-time. This report will go through every component, that has been used
+             to make this system work.
+          </i></b>
+                    </p>
+                </div>
+
+                <p class="lead btn-learn">
+                    <a class="btn btn-secondary btn-lg" href="#main" role="button">
+          Learn more
+        </a>
+                </p>
+                <p class="material-icons">expand_more</p>
+            </div>
+        </div>
+    </section>
+    <section class="jumbotron" id="main">
+        <div class="row">
+            <div class="col-3">
+                <ul class="slider">
+                    <h1>Contents</h1>
+                    <hr>
+                    <li class="item">
+
+                        <ul class="slider nested">
+                            <li class="item">
+                                <h4> <a href="#overview">Overview</a></h4>
+                            </li>
+                            <li class="item">
+                                <h4> <a href="#sysOverview">System Overview</a></h4>
+                                <ul>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Arduino">Arduino</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Library">Library</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Low">Low Pass Filter</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#PID">PID Control</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#PWM">Pulse Width Modulation</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#DAQ">DAQ</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Wifi">Wifi Shield</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Cloud">Cloud</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#API">API</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Cyber">Cyber Security</a></h5>
+                                    </li>
+                                </ul>
+                            </li>
+
+
+                            <li class="item">
+                                <h3><a href="#Methods">Methods</a></h3>
+                                <ul>
+                                    <li class="item nested1">
+                                        <h5> <a href="#PID-m">PID</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Low-m">Low Pass Filter</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Upgrade">Upgrading the Wifi Firmware</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Program">Arduino Program</a></h5>
+                                    </li>
+                                    <li class="item nested1">
+                                        <h5> <a href="#Mat">Read Data</a></h5>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+                            <li class="item">
+                                <h3><a href="#Results">Results</a></h3>
+                            </li>
+                            <li class="item">
+                                <h3><a href="#Conclusion">Conclusion</a></h3>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+
+            </div>
+            <div class="col-9">
+                <div class="content">
+
+                    <div id="sysOverview" id="sysOverview">
+                        <h2>
+                            System Overview
+                        </h2>
+                        <hr>
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/System Overview.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"> <b> Figure 1:</b> System Overview</figcaption>
+                            </figure>
+
+                        </div>
+                        <p>In this project, the PI controller has been implemented in Arduino to control the temperature, where the controlling signal is coming from the Air Heater itself. The signal is then passed through PI controller to reach to its setpoint
+                            in Arduino and Arduino sends it as PWM. AS the Arduino does not have Analog Out, the signal had to be converted to Analog. To make the PWM more smooth, Low Pass Filter has been used. The output signal from the PI controller
+                            has to be sent to the Air Heater using DAC chip MCP4XXX to convert it into Analog Signal, as the Arduino does not have Analog Out Signal, rather it gives out PWM signal. </p>
+                        <p>Moreover, all the signal is stored in the cloud (ThingSpeak) by using Wi-fi Shield. The Wi-fi Shield let Arduino connects to the available wifi using SSD name and Password, and then using Read API found from the Thingspeak, Arduino
+                            gets connected to the server and save data.
+                        </p>
+                        <p>Before we implement this system in real Air Heater, the system has been tested using LabView and USB DAQ 6008.</p>
+
+                        <h2 id="Arduino">Arduino</h2>
+                        <hr>
+                        <p>Arduino is an open-source electronics platform based on easy-to-use hardware and software. Arduino boards are able to read inputs - light on a sensor, a finger on a button, or a Twitter message - and turn it into an output - activating
+                            a motor, turning on an LED, publishing something online. You can tell your board what to do by sending a set of instructions to the micro-controller on the board. To do so you use the Arduino programming language (based on
+                            Wiring), and the Arduino Software (IDE), based on Processing.</p>
+
+                        <h2 id="Library">Library</h2>
+                        <hr>
+
+                        <p>Libraries are files written in C or C++ (.c, .cpp) which provide sketches with extra functionality (e.g. the ability to control an LED matrix, or read an encoder, etc.). </p>
+                        <p>Library consists of at least two files: a <strong>header file (w/ the extension .h)</strong> and the <strong>source file (w/ extension .cpp)</strong> . The header file has definitions for the library: basically a listing of everything
+                            that's inside; while the source file has the actual code.</p>
+                        <p>In this task, two library files has been made, one is for Low Pass Filter , and other one is for PID controller. Besides that, we have used Wifi and Thingspeak library.</p>
+
+
+                        <h2 id="Low">Low Pass Filter</h2>
+                        <hr>
+                        <p>A low-pass filter (LPF) is a filter that passes signals with a frequency lower than a selected cutoff frequency and attenuates signals with frequencies higher than the cutoff frequency.</p>
+
+                        <h2 id="PID">PID Controller</h2>
+                        <hr>
+                        <p>A PID controller is a three-term controller that has proportional, integral and derivative control coefficients. It is named after its three correcting terms and its sum produce a control action for manipulating variable. It measures
+                            the output of a process and controls the input by maintaining the output at a desired value (also called as set point). The most common example of PID controller is controlling temperature in many industrial applications.</p>
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/pid.png" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                <figcaption class=" figure-caption "> <b> Figure 2:</b>PID Controller</figcaption>
+                            </figure>
+                        </div>
+                        <ul>
+                            <li><b>P-Controller</b>
+                                <p>
+                                    Proportional or P- controller gives an output that is proportional to current error e (t). It compares the desired or set point with the actual value or feedback process value. The resulting error is multiplied with a proportional constant to get the
+                                    output. If the error value is zero, then this controller output is zero.
+                                    <div class="image">
+                                        <figure class="figure">
+                                            <img src="./assets/img/P-controller.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                            <figcaption class=" figure-caption "> <b> Figure 3:</b> P-Controller</figcaption>
+                                        </figure>
+                                    </div>
+                                    P-controller P-controller This controller requires biasing or manual reset when used alone. This is because it never reaches the steady-state condition. It provides stable operation but always maintains the steady-state error. The speed of the response
+                                    is increased when the proportional constant Kc increases.
+                                    <div class="image">
+                                        <figure class="figure">
+                                            <img src="./assets/img/P-controller-response.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                            <figcaption class=" figure-caption "> <b> Figure 4:</b> P-Controller Frequency Response Analysis</figcaption>
+                                        </figure>
+                                    </div>
+                                </p>
+                            </li>
+                            <li><b>I-Controller</b>
+                                <p>
+                                    Due to the limitation of p-controller where there always exists an offset between the process variable and setpoint, I-controller is needed, which provides necessary action to eliminate the steady-state error. It integrates the error over a period of
+                                    time until the error value reaches zero. It holds the value to the final control device at which error becomes zero.
+                                    <div class="image">
+                                        <figure class="figure">
+                                            <img src="./assets/img/PI-controller.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                            <figcaption class=" figure-caption "> <b> Figure 5:</b>PI-Controller</figcaption>
+                                        </figure>
+                                    </div>
+                                    Integral control decreases its output when a negative error takes place. It limits the speed of response and affects the stability of the system. The speed of the response is increased by decreasing integral gain, Ki. In the bottom figure, as the gain
+                                    of the I-controller decreases, the steady-state error also goes on decreasing. For most of the cases, the PI controller is used particularly where the high-speed response is not required. While using the PI controller,
+                                    I-controller output is limited to somewhat range to overcome the integral wind up conditions where the integral output goes on increasing even at zero error state, due to non-linearities in the plant.
+                                    <div class="image">
+                                        <figure class="figure">
+                                            <img src="./assets/img/PI-controller-response.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                            <figcaption class=" figure-caption "> <b> Figure 6:</b> PI-Controller Frequency Response Analysis</figcaption>
+                                        </figure>
+                                    </div>
+                                </p>
+                            </li>
+                            <li><b>D-Controller</b>
+                                <p>
+                                    I-controller doesn’t have the capability to predict the future behavior of error. So it reacts normally once the setpoint is changed. D-controller overcomes this problem by anticipating the future behavior of the error. Its output depends on the rate
+                                    of change of error with respect to time, multiplied by derivative constant. It gives the kick start for the output thereby increasing system response.
+                                    <div class="image">
+                                        <figure class="figure">
+                                            <img src="./assets/img/PID-controller.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                            <figcaption class=" figure-caption "> <b> Figure 7:</b> PID-Controller</figcaption>
+                                        </figure>
+                                    </div>
+                                    So finally we observed that by combining these three controllers, we can get the desired response for the system. Different manufacturers design different PID algorithms.
+                                    <div class="image">
+                                        <figure class="figure">
+                                            <img src="./assets/img/PID-controller-response.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corner">
+                                            <figcaption class=" figure-caption "><b> Figure 8:</b> PID-Controller Frequency Response Analysis</figcaption>
+                                        </figure>
+                                    </div>
+                            </li>
+                        </ul>
+
+                        <h2 id="PWM">Pulse Width Modulation</h2>
+                        <hr>
+                        <p>Pulse Width Modulation, or PWM, is a technique for getting analog results with digital means. Digital control is used to create a square wave, a signal switched between on and off. This on-off pattern can simulate voltages in between
+                            the full Vcc of the board (e.g., 5 V on Uno, 3.3 V on a MKR board) and off (0 Volts) by changing the portion of the time the signal spends on versus the time that the signal spends off. The duration of "on time" is called the
+                            pulse width. To get varying analog values, you change, or modulate, that pulse width. </p>
+                        <p>Arduino does not have Analog Output Signal, but rather it gives out only Digital Output. That is the reason, PWM signal will be used in this project. As, the PWM can vary really fast, it can act as an analog signal. To make it
+                            more smooth, Low Pass filter has been used to smoothen the signal.</p>
+
+
+                        <h2 id="DAQ">DAQ</h2>
+                        <hr>
+                        <p>Alternatively, DAQ has been used to convert digital signal to analog signal and then pass it to the Air Heater. In this project, <strong>MCP4XXX</strong> has been used. It changes the signal to the analog signal.</p>
+
+
+                        <h2 id="Wifi">Wi-fi Shield</h2>
+                        <hr>
+                        <p>The Arduino WiFi Shield allows an Arduino board to connect to the internet using the 802.11 wireless specification (WiFi). It is based on the HDG204 Wireless LAN 802.11b/g System in-Package. An AT32UC3 provides a network (IP) stack
+                            capable of both TCP and UDP. Use the WiFI library to write sketches which connect to the internet using the shield. The WiFI shield connects to an Arduino board using long wire-wrap headers which extend through the shield.
+                            This keeps the pin layout intact and allows another shield to be stacked on top.</p>
+                        <p>The WiFi Shield can connect to wireless networks which operate according to the 802.11b and 802.11g specifications. There is an onboard micro-SD card slot, which can be used to store files for serving over the network. It is compatible
+                            with the Arduino Uno and Mega. The onboard microSD card reader is accessible through the SD Library. When working with this library, SS is on Pin 4. Arduino communicates with both the Wifi shield's processor and SD card using
+                            the SPI bus (through the ICSP header). This is on digital pins 11, 12, and 13 on the Uno and pins 50, 51, and 52 on the Mega. On both boards, pin 10 is used to select the HDG204 and pin 4 for the SD card. These pins cannot
+                            be used for general I/O. On the Mega, the hardware SS pin, 53, is not used to select either the HDG204 or the SD card, but it must be kept as an output or the SPI interface won't work. Digital pin 7 is used as a handshake pin
+                            between the WiFi shield and the Arduino, and should not be used. <a style="font-size:12px;" href="#1">[1]</a></p>
+                        <h2 id="Cloud">Cloud</h2>
+                        <hr>
+                        <p>"The cloud" refers to servers that are accessed over the Internet, and the software and databases that run on those servers. Cloud servers are located in data centers all over the world. By using cloud computing, users and companies
+                            don't have to manage physical servers themselves or run software applications on their own machines. <a style="font-size:12px;" href="#2">[2]</a></p>
+                        <h2 id="API">API</h2>
+                        <hr>
+                        <p>An application programming interface (API) is a computing interface which defines interactions between multiple software intermediaries. It defines the kinds of calls or requests that can be made, how to make them, the data formats
+                            that should be used, the conventions to follow, etc. It can also provide extension mechanisms so that users can extend existing functionality in various ways and to varying degrees.An API can be entirely custom, specific to
+                            a component, or it can be designed based on an industry-standard to ensure interoperability. Through information hiding, APIs enable modular programming, which allows users to use the interface independently of the implementation.
+                            <a style="font-size:12px;" href="#3">[3]</a></p>
+                        <h2 id="Cyber">Cyber Security</h2>
+                        <hr>
+                        <p>Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These cyber-attacks are usually aimed at accessing, changing, or destroying sensitive information, extorting money from users, or
+                            interrupting normal business processes. Different types of Cyber Security threats:
+
+                            <ul>
+                                <li>Ransomware</li>
+                                <li>Malware</li>
+                                <li>Social engineering</li>
+                                <li>Malware</li>
+                                <li>Phishing</li>
+                            </ul>
+                        </p>
+
+                        <p>To be secured:
+                            <ul>
+                                <li>Passwords</li>
+                                <li>Firewall</li>
+                                <li>Antivirus and anti-malware software</li>
+                                <li>Access control</li>
+                                <li>VPN</li>
+                                <li>Wi-Fi Network can be used</li>
+                            </ul>
+                        </p>
+
+
+                        <h4>Security is Crucial</h4>
+                        <hr>
+                        <p>Maintaining a high level of security is critical when transporting the data around the IoT network. Information transmitted through this network can be anything from temperature sensor data in production machines to patient data
+                            recorded by X-ray machines in hospitals. Business-critical information is often collected and reported in a central database located somewhere in the cloud or a local data center. When we have IoT devices containing so much
+                            sensitive data, security is absolutely essential for developers who want to take advantage of the benefits offered by IoT technology.</p>
+                        <h4>Our Security</h4>
+                        <hr>
+                        <p>Over here, REST API was used to send data from Arduino to Cloud. As, the key is the secret unique code, it needed to be saved securerly, which it can only be used to access data in the cloud. Moreover, the API can be generated
+                            every month on ThingSpeak, which make sure that even if anyone had access to it, it cannot be used anymore.</p>
+
+
+                        <h2></h2>
+                        <h1 id="Methods">Methods</h1>
+                        <hr>
+                        <h2 id="PID-m">PID Controller</h2>
+                        <hr>
+                        <p>PI controller has been implemented in the system, where the I controller has a major disadvantage which is these are quite unstable. The reason behind this is that integral controllers show somewhat slow response towards the produced
+                            error. However, the major advantage concerning the proportional controller is that these are designed in a way by which steady-state error gets reduced significantly thereby making the system more stable. This is the reason
+                            the two are combinedly used to produce a type of controller which provides highly stable results.; but its main advantage is that it reduces steady-state error drastically. </p>
+
+                        <p>The program takes setpoint temperature, Real temperature, Kp, Ki and and Ts as a parameter. Then it finds out the error, which then adds it to find out the integral error, that has been bound from -1 to 1. Later, it finds the output
+                            signal and then output the signal. </p>
+
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/PIController Header.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"> <b> Figure 9:</b> PI-Controller Header</figcaption>
+                            </figure>
+
+                        </div>
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/PI COntroller cpp.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 10:</b> PI-Controller Cpp</figcaption>
+                            </figure>
+
+                        </div>
+
+                        <h3></h3>
+
+                        <h3 id="Low-m">LowPass Filter</h3>
+
+                        <p>Passive Low Pass filter has been made using 10 microFarad capacitor and 3.9 kiloOHM resistor which has been connected to Arduino before passing signal to Air Heater from Arduino.</p>
+                        <p>Moreover, Low Pass Filter Library has also been created in the Arduino to cutoff frequency after processing signal from PID controller and to PWM. First, the cutoff frequency has been found using the calculator and then MATLAB
+                            has been used to find the transfer function and then converted to discrete time transfer function. Upon that, the equation has been made out of it, which has been implemented in Low Pass Filter. </p>
+
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/Cutoff.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 11:</b> Cutoff Frequency</figcaption>
+                            </figure>
+
+                        </div>
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/Matlab.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 12:</b> Matlab Code Discrete Time Transfer Function</figcaption>
+                            </figure>
+
+                        </div>
+
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/LowPass Cpp.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 13:</b> Lowpass Cpp</figcaption>
+                            </figure>
+
+                        </div>
+
+                        <div class="image">
+                            <figure class="figure">
+                                <img src="./assets/img/Lowpass Header.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 14:</b> Lowpass Header</figcaption>
+                            </figure>
+
+                        </div>
+
+                        <h2 id="Upgrade">Upgrading the Firmware of Wifi Shield</h2>
+                        <hr>
+                        <p> Wifi Shield has to be connected through Micro USB to computer detaching from Arduino Uno. Both pins at J3 has to shorted using given jumper. Usin Flip package from Atmel. <strong> Wifi_dnld.elf</strong> and <strong>WifiHD.elf</strong>                            files had been download and been saved into C:/ Opening the command prompt in windows.
+                            <div class="image">
+                                <figure class=" figure">
+                                    <img src="./assets/img/1.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                    <figcaption class="figure-caption"><b> Figure 15:</b> Command 1</figcaption>
+                                </figure>
+                            </div> then the below command had to executed
+                            <div class="image">
+                                <figure class=" figure">
+                                    <img src="./assets/img/1.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                    <figcaption class="figure-caption"><b> Figure 16:</b> Command 2</figcaption>
+                                </figure>
+                            </div>
+                            Once the command was executed, then this command had to be executed
+                            <div class="image">
+                                <figure class=" figure">
+                                    <img src="./assets/img/3.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                    <figcaption class="figure-caption"><b> Figure 17:</b> Result</figcaption>
+                                </figure>
+                            </div>
+
+                        </p>
+
+                        <h2 id="Program">Arduino Program</h2>
+                        <hr>
+                        <p></p>
+
+                        <div class="image">
+                            <figure class=" figure">
+                                <img src="./assets/img/4.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 18:</b> Arduino Program</figcaption>
+                            </figure>
+                        </div>
+                        <div class="image">
+                            <figure class=" figure">
+                                <img src="./assets/img/5.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 19:</b> Arduino Program</figcaption>
+                            </figure>
+                        </div>
+                        <div class="image">
+                            <figure class=" figure">
+                                <img src="./assets/img/6.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 20:</b> Arduino Program</figcaption>
+                            </figure>
+                        </div>
+                        <h3 id="Mat">Read data from MatLab</h3>
+                        <div class="image">
+                            <figure class=" figure">
+                                <img src="./assets/img/ReadAPI.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                <figcaption class="figure-caption"><b> Figure 21:</b> Retrieving Data from ThingSpeak in MatLab</figcaption>
+                            </figure>
+                        </div>
+
+
+                        <h1 id="Results">Results</h1>
+                        <hr>
+                        <p>
+                            <div class="image">
+                                <figure class=" figure">
+                                    <img src="./assets/img/7.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+                                    <figcaption class="figure-caption"><b> Figure 21:</b>DashBoard</figcaption>
+                                </figure>
+                            </div>
+                        </p>
+                        <h1 id="Conclusion">Conclusion</h1>
+                        <hr>
+                        <p>In this project, we have learnt how to implement PID controller and Low Pass filter in Arduino making Library. We have learnt how to gather real time data using USB DAQ 6008 and then process it in Arduino and send it to the Cloud.
+                            And Moreover, how to monitor and analyze the data after retrieving data from cloud. gets connected to the server and save data.
+                        </p>
+
+                    </div>
+                </div>
+                <h1 id="Reference">References</h1>
+                <hr>
+                <p id="1"> [1]<a href=" https://www.arduino.cc/en/pmwiki.php?n=Main/ArduinoWiFiShield"> "Arduino - ArduinoWiFiShield", Arduino.cc, 2020. [Online]. Available: https://www.arduino.cc/en/pmwiki.php?n=Main/ArduinoWiFiShield. [Accessed: 14- Dec- 2020].</a>                    .
+                    <p id="2"> [2]<a href="https://www.cloudflare.com/en-in/learning/cloud/what-is-the-cloud/"> 2020. [Online]. Available: https://www.cloudflare.com/en-in/learning/cloud/what-is-the-cloud/. [Accessed: 14- Dec- 2020].</a> . </p>
+
+                </p>
+                <p id="3"> [3]<a href="https://en.wikipedia.org/wiki/API">
+                            "API", En.wikipedia.org, 2020. [Online]. Available: https://en.wikipedia.org/wiki/API. [Accessed: 14- Dec- 2020].</a> .
+                </p>
+
+    </section>
+    <div class="footer">
+        <footer>
+            Created By <b> Zahid Hossain Ronty</b>
+        </footer>
+
+    </div>
+    <script src="" async defer></script>
+</body>
+
+
+
+</html>
