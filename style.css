@@ -51,6 +51,8 @@ html {
     position: -webkit-sticky;
     /* Safari */
     position: sticky;
+    overflow-y: scroll;
+    height: 550px;
     top: 0;
 }
 

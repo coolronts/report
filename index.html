@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Report</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- CSS only -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>System and Control Lab Assignment</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- JS, Popper.js, and jQuery -->
@@ -19,274 +14,164 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
-    <section id="#title">
-        <!--Jumbotron-->
-        <div class="jumbotron shadow-lg p-3 mb-5 bg-white rounded">
-            <h1 class="display-1">Industry 4.0 and <br> Automation</h1>
-            <p class="lead"><strong> LAB ASSIGNMENT ONE </strong></p>
-            <p>
-                <quote>By Zahid Hossain Ronty</quote>
-            </p>
-            <hr class="my-4" />
-            <div class="summary">
-                <p>
-                    <i><b>
-            In Lab 1 we will create, design and analyze a modern and flexible
-            Industry 4.0 Control System where the data should be stored in the
-            Cloud using Microsoft Azure. Industry 4.0 is the new term for the
-            combination of industry, automation and the current Internet of
-            Things (IoT) technology. The Controller should be designed and
-            analyzed using Frequency Response. Another part of the Control
-            System should be a Web-based Monitoring and Analyzing Application.
-            Cyber Security issues should also be considered.
-          </i></b>
-                </p>
-            </div>
 
-            <p class="lead btn-learn">
-                <a class="btn btn-secondary btn-lg" href="#main" role="button">
-          Learn more
-        </a>
-            </p>
-            <p class="material-icons">expand_more</p>
+
+    <main>
+
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+
+
+                            <h1>LAB ASSIGNMENT ONE</h1>
+                            <p style="text-align: justify;">In Lab 1, modern and flexible Industry 4.0 Control System was designed and analyzed, where the data had been stored in the Cloud using Microsoft Azure. The Controller has been designed and analyzed using Frequency Response.
+                                Another part of the Control System had been a Web-based Monitoring and Analyzing Application. Cyber Security issues should was also considered.
+
+
+                            </p>
+                            <p><a class="btn btn-lg btn-primary" href="#Ass1" role="button">Learn More</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>LAB ASSIGNMENT TWO</h1>
+                            <p style="text-align: justify;">This assignment 2 is mainly concerned of Internet of Things, where Arduino has been used instead of Industrial Microcontroller to control the temperature of the Air heater. The PID controller has been implemented inside the
+                                Arduino to get into SetPoint temperature and Low pass filter has been used to cut off unwanted noises from the signal. Besides controlling the temperature of the air heater, the data has also been stored in the cloud (Thingspeak)
+                                to analyse and monitor the data in real-time. This report will go through every component, that has been used to make this system work.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#Ass2" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
         </div>
-    </section>
-    <section class="jumbotron" id="main">
-        <div class="row">
-            <div class="col-3">
-                <ul class="slider">
-                    <h1>Contents</h1>
-                    <hr>
-                    <li class="item">
-                        <h3> <a href="#intro">Introduction</a></h3>
-                        <ul class="slider nested">
-                            <li class="item">
-                                <h4> <a href="#overview">Overview</a></h4>
-                            </li>
-                            <li class="item">
-                                <h4> <a href="#sysOverview">System Overview</a></h4>
-                                <ul>
-                                    <li class="item nested1">
-                                        <h5> <a href="#internet">Internet 4.0</a></h5>
-                                    </li>
-                                    <li class="item nested1">
-                                        <h5> <a href="#scada">Scada</a></h5>
-                                    </li>
-                                    <li class="item nested1">
-                                        <h5> <a href="#cloud">Cloud Computing</a></h5>
-                                    </li>
-                                </ul>
-                            </li>
 
 
 
 
-                        </ul>
-                    </li>
-                    <li class="item">
-                        <h3><a href="#Methods">Methods</a></h3>
-                    </li>
-                    <li class="item">
-                        <h3><a href="#Results">Results</a></h3>
-                    </li>
-                    <li class="item">
-                        <h3><a href="#Conclusion">Conclusion</a></h3>
-                    </li>
-                    <li class="item">
-                        <h3><a href="#Reference">References</a></h3>
-                    </li>
-                </ul>
 
-            </div>
-            <div class="col-9">
-                <div class="content">
-                    <div id="intro" class="introduction">
-                        <h1>Introduction</h1>
-                        <hr>
-                        <div id="overview" class="overview">
-                            <h2>Overview</h2>
-                            <hr>
-                            <p>
-                                <ul>
-                                    <li>
-                                        Modelling and Simulation. Control Design and Aalysis with MATLAB
-                                        <br> -Frequency Response, Stability Analysis, Simulation, etc.
-                                    </li>
-                                    <li>
-                                        Implementing Control System in LabView.
-                                    </li>
-                                    <li>
-                                        Use OPC UA - The Industry 4.0 Implementation of OPC.
-                                    </li>
-                                    <li>
-                                        Cloud based datalogging. SQL server stored in Microsoft Azure.
-                                    </li>
-                                    <li>
-                                        Monitoring and Analysis in the cloud. Web-based ASP.Net/C# system hosted at Microsoft Azure.
-                                    </li>
-                                    <li>
-                                        Give an overview and analyze issues regarding Cyber Security and GDRP for the system you create.
-                                    </li>
-                                </ul>
-                        </div>
-                        </p>
-                    </div>
-                    <div id="sysOverview" id="sysOverview">
-                        <h2>
-                            System Overview
-                        </h2>
-                        <hr>
-                        <div class="image">
-                            <figure class="figure">
-                                <img src="./SystemOverview.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                <figcaption class="figure-caption">System Overview</figcaption>
-                            </figure>
+        <!-- START THE FEATURETTES -->
 
-                        </div>
-                        <h3 id="internet">Internet 4.0</h3>
-                        <hr>
-                        <p>Industry 4.0 refers to a new phase in the Industrial Revolution that focuses heavily on interconnectivity, automation, machine learning, and real-time data. Industry 4.0, which encompasses IIoT and smart manufacturing, marries
-                            physical production and operations with smart digital technology, machine learning, and big data to create a more holistic and better connected ecosystem for companies that focus on manufacturing and supply chain management.
-                            While every company and organization operating today is different, they all face a common challenge—the need for connectedness and access to real-time insights across processes, partners, products, and people.<a href="#1">[1]</a></p>
+        <section class="feature" style="margin: 80px;">
 
-                        <h3 id="scada">Scada</h3>
-                        <hr>
-                        <p>Supervisory control and data acquisition (SCADA) is a system of software and hardware elements that allows industrial organizations to: Control industrial processes locally or at remote locations, Monitor, gather, and process real-time
-                            data, Directly interact with devices such as sensors, valves, pumps, motors, and more through human-machine interface (HMI), software and Record events into a log file.<a href="#2">[2]</a></p>
-                        <h3 id="cloud">Cloud Computing</h3>
-                        <hr>
-                        <p>Cloud computing is the delivery of different services through the Internet. These resources include tools and applications like data storage, servers, databases, networking, and software.Rather than keeping files on a proprietary
-                            hard drive or local storage device, cloud-based storage makes it possible to save them to a remote database. As long as an electronic device has access to the web, it has access to the data and the software programs to run
-                            it. Cloud computing is a popular option for people and businesses for a number of reasons including cost savings, increased productivity, speed and efficiency, performance, and security.<a href="#3">[3]</a></p>
+            <div class="row featurette">
+                <div class="col-md-7" id="Ass1">
+                    <h2 class="featurette-heading">Lab Assignment 1 </h2>
+                    <h2 class="text-muted">System Overview</h2>
+                    </h2>
+                    <p class="lead" style="text-align: justify;">In Lab 1, the temperature of the Air Heater has been collected using DAQ-6000, and signal has been passed to the LABVIEW in PC. In the Labview, PID controller, Low pass Pass Filter and Scaling has been used to control the output signal
+                        to reach the set-point and pass the output signal back to the Air Heater. The data had been stored in OPC server from the Labview. Moreover, the data data had been sent to MySQL server in Azure Database. After the database had
+                        been implementation where the data should be stored in the Cloud using Microsoft Azure. Beside creating database, the website has been created using ASP.Net to monitor the real time value.</p>
+                    <p><a class="btn btn-lg btn-primary" target="_blank" href="./Assignment/Assignment1.html" role="button">Go to Report</a></p>
 
-                        <figure class="figure">
-                            <img src="https://th.bing.com/th/id/OIP.eAaiIDvib8Hu_XxA1f-Z5QHaGC?w=195&h=180&c=7&o=5&dpr=1.46&pid=1.7" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                            <figcaption class="figure-caption">System Overview</figcaption>
-                        </figure>
+                </div>
+                <div class="col-md-5">
+                    <img src="./assets/img/SystemOverview.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
 
-                        <ul>
-                            <li>
-                                <b>Saas</b>-Software as a Service
-                                <p>Software as a service (SaaS) is a software distribution model in which a third-party provider hosts applications and makes them available to customers over the Internet. SaaS is one of three main categories of cloud computing,
-                                    alongside infrastructure as a service and platform as a service (IaaS and PaaS). </p>
-                                <p> SaaS is closely related to the application service provider (ASP) and on demand computing software delivery models. The hosted application management model of SaaS is similar to ASP, where the provider hosts the customer’s
-                                    software and delivers it to approved end users over the internet</p>
-                                <p>In the software on demand SaaS model, the provider gives customers network-based access to a single copy of an application that the provider created specifically for SaaS distribution. The application’s source code is the
-                                    same for all customers and when new features or functionalities are rolled out, they are rolled out to all customers. Depending upon the service level agreement (SLA), the customer’s data for each model may be stored
-                                    locally, in the cloud or both locally and in the cloud.</p>
-                                <p>Organizations can integrate SaaS applications with other software using application programming interfaces (APIs). For example, a business can write its own software tools and use the SaaS provider's APIs to integrate those
-                                    tools with the SaaS offering. <a href="#4">[4]</a>
-                                </p>
-                            </li>
-                            <li><b>PaaS</b>-Perform as a Service
-                                <p>Platform as a service (PaaS) is a complete development and deployment environment in the cloud, with resources that enable you to deliver everything from simple cloud-based apps to sophisticated, cloud-enabled enterprise
-                                    applications. You purchase the resources you need from a cloud service provider on a pay-as-you-go basis and access them over a secure Internet connection.</p>
-                                <p>Like IaaS, PaaS includes infrastructure – servers, storage and networking – but also middleware, development tools, business intelligence (BI) services, database management systems and more. PaaS is designed to support
-                                    the complete web application life cycle: building, testing, deploying, managing, and updating.
-                                </p>
-                                <p>PaaS allows you to avoid the expense and complexity of buying and managing software licences, the underlying application infrastructure and middleware, container orchestrators such as Kubernetes or the development tools
-                                    and other resources. You manage the applications and services that you develop, and the cloud service provider typically manages everything else.
-                                    <a href="#5">[5]</a></p>
-                            </li>
-                            <li><b>IaaS</b>-Infastructure as a Service
-                                <p>Infrastructure-as-a-Service, commonly referred to as simply “IaaS,” is a form of cloud computing that delivers fundamental compute, network, and storage resources to consumers on-demand, over the internet, and on a pay-as-you-go
-                                    basis. IaaS enables end users to scale and shrink resources on an as-needed basis, reducing the need for high, up-front capital expenditures or unnecessary “owned” infrastructure, especially in the case of “spiky” workloads.
-                                    In contrast to PaaS and SaaS (even newer computing models like containers and serverless), IaaS provides the lowest-level control of resources in the cloud.
-                                </p>
-                                <p>
-                                    IaaS emerged as a popular computing model in the early 2010s, and since that time, it has become the standard abstraction model for many types of workloads. However, with the advent of new technologies, such as containers and serverless, and the related
-                                    rise of the microservices application pattern, IaaS remains foundational but is in a more crowded field than ever.
-                                    <a href="#6">[6]</a>
-                                </p>
-                            </li>
-                        </ul>
-                        <h3>Software</h3>
-                        <br>
-                        <ul>
-                            <li>LabView</li>
-                            <li>MatLab</li>
-                            <li>Python</li>
-                            <li>ASP.Net</li>
-                            <li>SQL</li>
-                        </ul>
-                        <h3>Hardware</h3>
-                        <ul>
-                            <li>Air Heater</li>
-                            <li>DAQ Device e.g. USB-6008</li>
-                        </ul>
-                        <br>
-                    </div>
-                    <h1 id="Methods">Methods</h1>
-                    <hr>
-                    <p>
-                        We have used LabView to design the blackbox system to create Air Heater model. we have used control and Simulation and used PID controller to stabilize the control system. We have also used OPC in labview to communicate between our server and our conrtrol
-                        system. It is a machine to machine communication protocol for industrial automation. And then, we have used SQL server to store in our SQL database. To manage the SQL database, we have used Microsoft SQL Management Studio. And
-                        then, we created a SQL database in the Azure cloud system. Moreover, we have created Web App to visualize the data in real time, in ASP.Net programming. And we have used Visual Studio as our IDE, and used HTML, CSS, Bootstrap as
-                        our frontend. Later,we have deployed our app in Azure Cloud system.
-
-                    </p>
-                    <h1 id="Results">Results</h1>
-                    <hr>
-                    <p>
-                        <div class="image">
-                            <figure class=" figure">
-                                <img src="./pic.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                <figcaption class="figure-caption">DashBoard</figcaption>
-                            </figure>
-                        </div>
-
-                        <div class="image">
-                            <figure class="figure">
-                                <img src="./pic1.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-                                <figcaption class="figure-caption">LabView</figcaption>
-                            </figure>
-                        </div>
-
-
-
-                    </p>
-                    <h1 id="Conclusion">Conclusion</h1>
-                    <hr>
-                    <p>In this assignment, we have come to know how IOT works and how to implement it. We have got thorough knowledge of LabView, Control System, Database Connectivity, Website and OPC.
-                    </p>
-                    <h1 id="Reference">References</h1>
-                    <hr>
-                    <p id="1">[1]<a href="https://www.epicor.com/en-us/resource-center/articles/what-is-industry-4-0">"What is Industry 4.0—the Industrial Internet of Things (IIoT)?", Epicor.com, 2020. [Online]. [Accessed: 02- Oct- 2020].</a> . </p>
-                    <p id="2">[2]<a href=" https://inductiveautomation.com/resources/article/what-is-scada">"What is SCADA?", Inductive Automation, 2020. [Online]. [Accessed: 02- Oct- 2020].</a> .
-                    </p>
-                    <p id="3">[3]<a href=" https://www.investopedia.com/terms/c/cloud-computing.asp">
-                            "How Cloud Computing Works", Investopedia, 2020. [Online].[Accessed: 02- Oct- 2020].</a> .
-                    </p>
-
-                    <p id="4">[4]<a href="https: //searchcloudcomputing.techtarget.com/definition/Software-as-a-Service">"SearchCloudComputing. 2020. What Is Saas (Software As A Service)? - Definition From Whatis.Com. [online]. [Accessed: 02- Oct- 2020].</a> .
-                    </p>
-                    <p id="5">[5]<a href="https: //azure.microsoft.com/en-gb/overview/what-is-paas">"What is PaaS? Platform as a Service | Microsoft Azure", Azure.microsoft.com, 2020. [Online].[Accessed: 01- Oct- 2020].</a> .
-                    </p>
-                    <p id="6">[6]<a href="https: //www.redhat.com/en/topics/cloud-computing/what-is-iaas">
-                        https://www.redhat.com/en/topics/cloud-computing/what-is-iaas. [Accessed: 01- Oct- 2020].</a> .
-                    </p>
                 </div>
             </div>
-    </section>
-    <div class="footer">
-        <footer>
-            Created By <b> Zahid Hossain Ronty</b>
+
+            <hr class="featurette-divider">
+
+            <div class="row featurette" id="Ass2">
+                <div class="col-md-7 order-md-2">
+                    <h2 class="featurette-heading">Lab Assignment 2</h2>
+                    <h2 class="text-muted">System Overview</h2>
+                    <p class="lead" style="text-align: justify;">In this project, the PI controller has been implemented in Arduino to control the temperature, where the controlling signal is coming from the Air Heater itself. The signal is then passed through PI controller to reach to its setpoint
+                        in Arduino and Arduino sends it as PWM. AS the Arduino does not have Analog Out, the signal had to be converted to Analog. To make the PWM more smooth, Low Pass Filter has been used. The output signal from the PI controller has
+                        to be sent to the Air Heater using DAC chip MCP4XXX to convert it into Analog Signal, as the Arduino does not have Analog Out Signal, rather it gives out PWM signal. Moreover, all the signal is stored in the cloud (ThingSpeak)
+                        by using WiFi Shield. The WiFi Shield let Arduino connects to the available WiFi using SSD name and Password, and then using Read API found from the ThingSpeak, Arduino gets connected to the server and save data. Before we implement
+                        this system in real Air Heater, the system has been tested using LabView and USB DAQ 6008.</p>
+                    <p><a class="btn btn-lg btn-primary" target="_blank" href="./Assignment/Assignment2.html" role="button">Go to Report</a></p>
+
+                </div>
+                <div class="col-md-5 order-md-1">
+                    <img src="./assets/img/System Overview.jpg" class="figure-img img-fluid rounded border border-success shadow p-3 mb-5 bg-white rounded" alt="A generic square placeholder image with rounded corners in a figure.">
+
+                </div>
+            </div>
+
+
+
+            <hr class="featurette-divider">
+
+            <!-- /END THE FEATURETTES -->
+
+            </div>
+            <!-- /.container -->
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-end"><a href="#">Back to top</a></p>
+            <p>&copy; Zahid Hossain Ronty </p>
         </footer>
+    </main>
 
-    </div>
-    <script src="" async defer></script>
+
+    <script src="https://getbootstrap.com/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
 </body>
-
-
 
 </html>
